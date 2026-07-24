@@ -7,11 +7,11 @@
 const DATA = {
 
   /* ---------- 1. BASICS ---------- */
-  name:   "Your Name",
+  name:   "Hanna Mohamed Mohamed",
   role:   "Software Engineer",
   location: "Cairo, Egypt",
-  email:  "you@example.com",
-  phone:  "+20 100 000 0000",
+  email:  "hanabakeer24@gmail.com",
+  phone:  "01061332117",
 
   // Put your photo in the assets folder and keep this filename,
   // or paste any image URL here.
