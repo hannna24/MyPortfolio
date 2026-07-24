@@ -220,6 +220,15 @@ section{padding:96px 24px}
 .proj-body h3{font-family:var(--font-display);font-size:1.18rem;font-weight:700;margin-bottom:9px;letter-spacing:-.02em}
 .proj-body p{color:var(--text-dim);font-size:.93rem;flex:1}
 .proj-links{display:flex;gap:10px;margin-top:18px}
+
+/* click-to-zoom certificate images + fullscreen lightbox */
+.cert-thumb{cursor:zoom-in;transition:opacity .2s,transform .2s}
+.cert-thumb:hover{opacity:.92}
+.lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.85);backdrop-filter:blur(4px);cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.55);cursor:default}
+.lightbox-close{position:absolute;top:18px;right:22px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.28)}
 /* the "+N" pill that collapses extra tags — click to expand */
 .tag-more{
   padding:5px 13px;border-radius:999px;font-size:.8rem;font-weight:700;
