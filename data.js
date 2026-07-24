@@ -131,7 +131,7 @@ const DATA = {
 
   projects: [
     {
-      title: "IssueHawk",
+      title: "Github-IssueHawk",
       category: "AI & ML",              // must match one filter above
       image: "assets/Hawk.png",
       description: "Autonomous GitHub issue triage that earns trust before it acts. A self-hosted system that classifies incoming issues and flags duplicates with a locally fine-tuned 3B model, then runs in shadow mode — predicting on live traffic but never posting until its agreement rate proves it's reliable. Hits 0.79 macro F1 (+25% over baseline) at ~120ms per issue, fully offline.",
