@@ -255,7 +255,7 @@ function renderCertificates() {
   $("#certCount").textContent = (d.certificates || []).length;
   $("#certList").innerHTML = (d.certificates || []).map(c => `
     <article class="proj reveal">
-      ${c.image ? `<img class="thumb" src="${esc(c.image)}" alt="" onerror="this.style.display='none'">` : ""}
+      ${c.image ? `<img class="thumb cert-thumb" src="${esc(c.image)}" alt="${esc(c.title)}" data-full="${esc(c.image)}" title="Click to view" onerror="this.style.display='none'">` : ""}
       <div class="cert-body">
         <h3>${esc(c.title)}</h3>
         <div class="org">${esc(c.issuer)}</div>
@@ -313,6 +313,37 @@ function observeReveals() {
   document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
 }
 
+/* click any [data-full] image to open it full-size in an overlay */
+function setupLightbox() {
+  if ($("#lightbox")) return;
+  const ov = document.createElement("div");
+  ov.id = "lightbox";
+  ov.className = "lightbox";
+  ov.innerHTML = `<button class="lightbox-close" aria-label="Close">&times;</button><img alt="">`;
+  document.body.appendChild(ov);
+  const img = ov.querySelector("img");
+
+  const open = (src, alt) => {
+    img.src = src; img.alt = alt || "";
+    ov.classList.add("open");
+    document.body.style.overflow = "hidden";
+  };
+  const close = () => {
+    ov.classList.remove("open");
+    document.body.style.overflow = "";
+    img.src = "";
+  };
+
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-full]");
+    if (t) { e.preventDefault(); open(t.getAttribute("data-full"), t.alt); }
+  });
+  ov.addEventListener("click", e => {
+    if (e.target === ov || e.target.classList.contains("lightbox-close")) close();
+  });
+  addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+}
+
 function setTheme(t) {
   document.documentElement.dataset.theme = t;
   $("#theme").textContent = t === "dark" ? "🌙" : "☀️";
@@ -331,6 +362,7 @@ function init() {
   renderContact();
 
   observeReveals();
+  setupLightbox();
 
   // saved theme, else system preference
   let saved = null;
