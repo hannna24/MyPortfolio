@@ -198,6 +198,8 @@ function renderSkills() {
       <div class="bar"><i data-level="${Number(k.level) || 0}"></i></div>
       <p>${esc(k.note)}</p>
     </article>`).join("");
+
+  setupScrollHint("skills");
 }
 
 function renderProjects() {
@@ -227,6 +229,8 @@ function renderProjects() {
     more.parentElement.querySelectorAll(".tag-extra").forEach(t => t.hidden = false);
     more.remove();
   });
+
+  setupScrollHint("projects");
 }
 
 function paintProjects(cat) {
@@ -265,6 +269,29 @@ function renderCertificates() {
         ${c.link ? `<div class="proj-links"><a class="btn" style="width:100%;justify-content:center" href="${esc(c.link)}" target="_blank" rel="noopener">${I.ext} View certificate</a></div>` : ""}
       </div>
     </article>`).join("");
+
+  setupScrollHint("certificates");
+}
+
+/* a "scroll down for more ..." nudge that fades out once you scroll */
+function setupScrollHint(label) {
+  if ($("#scrollHint")) return;
+  const hint = document.createElement("div");
+  hint.id = "scrollHint";
+  hint.className = "scroll-hint";
+  hint.innerHTML = `<span>Scroll down for more ${esc(label)}</span>` +
+    `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>`;
+  document.body.appendChild(hint);
+
+  const update = () => {
+    const scrollable = document.documentElement.scrollHeight - innerHeight > 40;
+    hint.classList.toggle("hide", !scrollable || scrollY > 120);
+  };
+  hint.addEventListener("click", () =>
+    scrollTo({ top: innerHeight * 0.85, behavior: "smooth" }));
+  addEventListener("scroll", update, { passive: true });
+  addEventListener("resize", update);
+  update();
 }
 
 function renderContact() {
@@ -297,20 +324,28 @@ function renderContact() {
    INTERACTIONS shared by all pages
    ============================================================ */
 let io;
+function revealEl(el) {
+  el.classList.add("in");
+  el.querySelectorAll(".bar i").forEach(b => {
+    b.style.width = b.dataset.level + "%";
+  });
+}
 function observeReveals() {
   if (!io) {
     io = new IntersectionObserver((entries) => {
       entries.forEach(en => {
         if (!en.isIntersecting) return;
-        en.target.classList.add("in");
-        en.target.querySelectorAll(".bar i").forEach(b => {
-          b.style.width = b.dataset.level + "%";
-        });
+        revealEl(en.target);
         io.unobserve(en.target);
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
   }
-  document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
+  const vh = innerHeight || document.documentElement.clientHeight;
+  document.querySelectorAll(".reveal:not(.in)").forEach(el => {
+    // anything already on screen at load shows right away; the rest animate in on scroll
+    if (el.getBoundingClientRect().top < vh * 0.92) revealEl(el);
+    else io.observe(el);
+  });
 }
 
 /* click any [data-full] image to open it full-size in an overlay */
