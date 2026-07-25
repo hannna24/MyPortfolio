@@ -8,7 +8,7 @@ const DATA = {
 
   /* ---------- 1. BASICS ---------- */
   name:   "Hanna Mohamed Mohamed",
-  role:   "Software Engineer",
+  role:   "Applied AI & Agentic Systems Engineer",
   location: "Cairo, Egypt",
   email:  "hanabakeer24@gmail.com",
   phone:  "01061332117",
@@ -17,7 +17,7 @@ const DATA = {
   // or paste any image URL here.
   photo:  "assets/profile.jpg",
 
-  bio: "Short paragraph about who you are and what you do. Two or three lines is plenty — mention your focus area and the kind of problems you like solving.",
+  bio: "Computer Engineering graduate from Ain Shams University, specializing in Applied AI and agentic systems. I build LLM pipelines, autonomous agents, and full-stack applications — most recently at Siemens EDA, engineering agentic GUI-testing systems. I like turning research-grade AI ideas into reliable, production-ready tools.",
 
   // Delete any line you don't use.
   links: {
@@ -32,7 +32,7 @@ const DATA = {
     {
       role: "AI/QA Engineer — Graduation Project (Sponsored)",
       company: "Siemens EDA",
-      logo: "",                          // or an image URL, or "" for none
+      logo: "assets/siemens-logo.png",   // or an image URL, or "" for none
       date: "October 2025 – July 2026",
       place: "Cairo, Egypt",
       points: [
@@ -46,7 +46,7 @@ const DATA = {
     {
       role: "Python Instructor",
       company: "Mind Builder",
-      logo: "",
+      logo: "assets/mindbuilder-logo.png",
       date: "July 2024 – September 2024",
       place: "Cairo, Egypt",
       points: [
@@ -77,24 +77,24 @@ const DATA = {
   /* ---------- 3. EDUCATION ---------- */
   education: [
     {
-      degree: "Bachelor of Engineering",
-      school: "University Name",
-      logo: "assets/university.png",
-      date: "Expected 2026",
+      degree: "Bachelor of Computer Engineering & Software Systems",
+      school: "Ain Shams University, Faculty of Engineering",
+      logo: "assets/ainshams-logo.png",
+      date: "October 2021 – June 2026",
       place: "Cairo, Egypt",
       points: [
-        "Major: Computer Engineering & Software Systems.",
-        "Minor: AI & Data Science.",
+        "GPA: 3.37 — graduated 16th in class, earning an A+ for the graduation project.",
+        "Focus on Applied AI, agentic systems, and full-stack software engineering.",
       ],
     },
     {
-      degree: "High School",
-      school: "School Name",
-      logo: "assets/school.png",
-      date: "Graduated 2021",
-      place: "Cairo, Egypt",
+      degree: "Dual Degree Program (B.Eng.)",
+      school: "University of East London, Faculty of Engineering",
+      logo: "assets/uel-logo.png",
+      date: "October 2021 – June 2026",
+      place: "London, United Kingdom",
       points: [
-        "Graduated ranked 3rd overall in class.",
+        "Dual-degree program run jointly with Ain Shams University.",
       ],
     },
   ],
@@ -106,42 +106,102 @@ const DATA = {
     {
       name: "Python",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      level: 90,
-      note: "One line on how you actually use it — the specific work, not the definition.",
+      level: 95,
+      note: "My primary language for LLM pipelines, autonomous agents (LangChain / LangGraph), fine-tuning, and backend services.",
     },
     {
-      name: "JavaScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      name: "PyTorch",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
       level: 85,
-      note: "One line on how you actually use it.",
+      note: "Fine-tune LLMs with PEFT/LoRA & QLoRA — e.g. Qwen2.5-3B on 4k+ GitHub issues for IssueHawk.",
+    },
+    {
+      name: "FastAPI",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      level: 88,
+      note: "Build async backends with JWT auth, rate-limited LLM calls, and scheduled agent pipelines.",
+    },
+    {
+      name: "Playwright",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg",
+      level: 95,
+      note: "Automate GUI testing and web scraping with agentic orchestration, self-healing agents, and trajectory evaluation.",
+    },
+    {
+      name: "LangChain",
+      icon: "https://cdn.simpleicons.org/langchain/2563eb",
+      level: 80,
+      note: "Build agentic pipelines with tool calling, RAG, and multi-step reasoning for autonomous LLM agents.",
+    },
+    {
+      name: "RAG",
+      icon: "assets/icon-rag.svg",
+      level: 85,
+      note: "Retrieval-Augmented Generation with ChromaDB and sentence-transformers to ground LLM answers in real data.",
+    },
+    {
+      name: "MCP (Model Context Protocol)",
+      icon: "https://cdn.simpleicons.org/modelcontextprotocol/2563eb",
+      level: 88,
+      note: "Wire LLM agents to external tools and data through MCP servers — used it for agentic GUI test generation.",
+    },
+    {
+      name: "LLM Orchestration",
+      icon: "assets/icon-orchestration.svg",
+      level: 88,
+      note: "Coordinate multiple LLMs, agents, and tools into reliable multi-step, multiphase agentic workflows.",
+    },
+    {
+      name: "Tool Calling",
+      icon: "assets/icon-toolcalling.svg",
+      level: 88,
+      note: "Enable LLMs to invoke external tools and APIs, with evaluation of tool-calling reliability.",
+    },
+    {
+      name: "Vector Databases (ChromaDB)",
+      icon: "assets/icon-chromadb.svg",
+      level: 85,
+      note: "Store and query embeddings for semantic search and RAG pipelines.",
+    },
+    {
+      name: "TypeScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      level: 80,
+      note: "Type-safe agent tooling and Playwright automation across Electron, VS Code, and Theia.",
     },
     {
       name: "React",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       level: 80,
-      note: "One line on how you actually use it.",
-    },
-    {
-      name: "PyTorch",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
-      level: 80,
-      note: "One line on how you actually use it.",
+      note: "Front-ends for my full-stack apps — dashboards, job feeds, and admin panels.",
     },
     {
       name: "PostgreSQL",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-      level: 75,
-      note: "One line on how you actually use it.",
+      level: 78,
+      note: "Persistence for shadow-mode logging, stored job data, and app state behind FastAPI / Node backends.",
     },
     {
       name: "Docker",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-      level: 70,
-      note: "One line on how you actually use it.",
+      level: 80,
+      note: "Containerize and deploy full stacks (FastAPI, Postgres, Ollama) via Docker Compose to production.",
     },
   ],
   // Tip: any tech icon works — swap the name in the URL, e.g.
   // .../icons/tensorflow/tensorflow-original.svg
+
+  // Grouped "toolbox" chips shown below the skill bars — no icons or levels needed.
+  // Add/remove items freely; each group renders as a labeled row of pills.
+  skillGroups: [
+    { name: "Programming Languages",        items: ["Python", "JavaScript", "TypeScript", "Java", "C/C++", "SQL", "Bash/Shell"] },
+    { name: "AI & Agentic Systems",         items: ["LangChain"
+      , "LangGraph", "RAG", "AI Agents", "MCP", "Prompt Engineering", "LLM Orchestration", "Tool Calling", "Agent Evaluation", "Embeddings", "Vector Databases (ChromaDB)", "Groq", "Ollama"] },
+    { name: "Testing & Automation",         items: ["Playwright", "Automated GUI Testing", "Self-Healing Test Agents", "Page Object Model", "Trajectory & Tool-Calling Evaluation"] },
+    { name: "Model Training & Fine-Tuning", items: ["PyTorch", "PEFT / LoRA", "QLoRA", "TRL", "Hugging Face", "GGUF Quantization", "llama.cpp", "Model Evaluation"] },
+    { name: "Web & Databases",              items: ["FastAPI", "React", "Node.js", "Express.js", "REST APIs", "Tailwind CSS", "PostgreSQL", "MongoDB"] },
+    { name: "Cloud & DevOps",               items: ["AWS", "Docker", "Git", "CI/CD", "Render", "Sentry", "Langfuse"] },
+  ],
 
 
   /* ---------- 5. PROJECTS ---------- */
@@ -150,20 +210,20 @@ const DATA = {
 
   projects: [
     {
-      title: "Github-IssueHawk",
+      title: "IssueHawk — Fine-Tuned Issue Triage Agent",
       category: "AI & ML",              // must match one filter above
-      image: "assets/Hawk.png",
-      description: "Autonomous GitHub issue triage that earns trust before it acts. A self-hosted system that classifies incoming issues and flags duplicates with a locally fine-tuned 3B model, then runs in shadow mode — predicting on live traffic but never posting until its agreement rate proves it's reliable. Hits 0.79 macro F1 (+25% over baseline) at ~120ms per issue, fully offline.",
-      tags: ["Python", "Ollama", "ChromaDB", "Fine-tuned 3B model", "Local embeddings"],
+      image: "assets/Hawk.jpg",
+      description: "Autonomous GitHub issue triage that earns trust before it acts. Fine-tuned Qwen2.5-3B with QLoRA on 4,000+ labeled issues to reach 0.79 macro F1 — a 25% gain over the Llama 3.3 70B zero-shot baseline. Adds ChromaDB semantic duplicate detection and a LangGraph agent, runs locally via GGUF quantization (1.8 GB) and Ollama at sub-100ms, and ships as a GitHub App with HMAC-verified webhooks that logged 86% agreement across 300+ shadow-mode predictions before automating anything. Langfuse tracks per-issue cost and latency.",
+      tags: ["PyTorch", "QLoRA / PEFT", "TRL", "llama.cpp", "LangGraph", "ChromaDB", "FastAPI", "PostgreSQL", "Langfuse", "Ollama", "Docker"],
       code: "https://github.com/hannna24/Github-IssueHawk.git",
       demo: "",                          // leave "" to hide the Live demo button
     },
     {
-      title: "JobRadar AI",
+      title: "JobRadar AI — Personalized Real-Time Job Agent",
       category: "AI & ML",              // must match one filter above
-      image: "assets/JobRadarProject.png",
-      description: "A personalized job-alert web app that fetches real postings from Adzuna and Remotive, then uses an LLM (Groq / Llama 3.3 70B) to score how well each one matches your profile and returns a ranked feed.",
-      tags: ["Python", "FastAPI", "Groq (Llama 3.3 70B)", "httpx", "uvicorn", "Pydantic", "Adzuna API", "Remotive API", "LLM scoring"],
+      image: "assets/JobRadarProject.jpg",
+      description: "An autonomous job-search agent that scrapes Wuzzuf and Bayt via Playwright and aggregates Adzuna API listings, scoring each posting against your profile with Llama 3.3 70B on Groq. A RAG pipeline with ChromaDB and sentence-transformers enables natural-language search grounded in real stored jobs, while an async FastAPI backend with JWT auth runs an APScheduler pipeline every 30 minutes — emailing alerts for high-scoring matches. Deployed full-stack (React, PostgreSQL) via Docker on Render.",
+      tags: ["FastAPI", "LangChain", "LangGraph", "Playwright", "ChromaDB", "Groq (Llama 3.3 70B)", "RAG", "React", "PostgreSQL", "Docker"],
       code: "https://github.com/hannna24/JobRadar.git",
       demo: "",                          // leave "" to hide the Live demo button
     },
@@ -171,8 +231,8 @@ const DATA = {
       title: "E-Commerce Website",
       category: "Software",             // must match one filter above
       image: "assets/E-commerce.png",
-      description: "A full-stack MERN e-commerce platform with a responsive storefront, JWT authentication, product browsing and search, a shopping cart with order tracking, and an admin dashboard for managing products and inventory.",
-      tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT Auth", "REST APIs", "JavaScript", "CSS"],
+      description: "A full-stack MERN e-commerce platform with JWT authentication, product and order management APIs, product browsing and search, a shopping cart with order tracking, and a responsive admin dashboard for managing products and inventory.",
+      tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT Auth", "REST APIs"],
       code: "https://github.com/hannna24/E-Commerce-Website.git",
       demo: "",                          // leave "" to hide the Live demo button
     },
@@ -186,7 +246,7 @@ const DATA = {
       title: "AWS Public Cloud Practitioner",
       issuer: "National Telecommunication Institute (NTI)",
       date: "August 2024",
-      image: "assets/AWS_certificate.png",
+      image: "assets/AWS_certificate.jpg",
       note: "A 90-hour training course on AWS and public cloud fundamentals — core compute, storage, networking, and security services and cloud deployment models. Delivered by NTI under Egypt's Ministry of Communications and Information Technology.",
       skills: ["AWS", "Cloud Computing", "EC2", "S3", "IAM", "Cloud Fundamentals"],
       link: "",
@@ -195,7 +255,7 @@ const DATA = {
       title: "Embedded Systems Essentials Training Program",
       issuer: "Siemens",
       date: "2024",
-      image: "assets/Siemens_certificate.png",
+      image: "assets/Siemens_certificate.jpg",
       note: "Covered microcontroller fundamentals — CPU architecture (Cortex-M, MPU, FPU, MMU), memory types, and interrupts — plus startup code, linker scripts, and the compilation process. Also RTOS fundamentals, communication protocols (UART, SPI, I2C, CAN, LIN), the HSM core, and AUTOSAR workflow, application layer, and COM stack.",
       skills: ["Embedded Systems", "Microcontrollers", "RTOS", "AUTOSAR", "ARM Cortex-M", "UART / SPI / I2C", "CAN / LIN"],
       link: "",
@@ -204,7 +264,7 @@ const DATA = {
       title: "Full Stack Web Development (MERN Stack)",
       issuer: "AMIT — Association of Management and Information Technology",
       date: "June 2025",
-      image: "assets/AMIT_certificate.png",
+      image: "assets/AMIT_certificate.jpg",
       note: "A 180-hour Full Stack Diploma: HTML5, CSS3, JavaScript, jQuery, Bootstrap, and OOP on the front end, and Node.js, Express, REST APIs, and MongoDB on the back end. Graduated with a grade of 98%.",
       skills: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express", "MongoDB", "REST API", "jQuery", "Bootstrap"],
       link: "",

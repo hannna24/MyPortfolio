@@ -123,6 +123,12 @@ section{padding:96px 24px}
   margin:0 auto 30px;border:3px solid var(--accent);
   box-shadow:0 0 0 8px var(--accent-soft);
 }
+.avatar-fallback{
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:700;font-size:3.4rem;
+  color:var(--accent);background:var(--accent-soft);
+  letter-spacing:-.02em;user-select:none;
+}
 #home h1{
   font-family:var(--font-display);font-weight:700;
   font-size:clamp(2.6rem,8vw,4.6rem);letter-spacing:-.04em;line-height:1.05;
@@ -185,6 +191,15 @@ section{padding:96px 24px}
 }
 .link-inline{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 
+/* secondary section heading + categorized "toolbox" chips */
+.subhead{text-align:center;margin:74px 0 34px}
+.subhead h3{font-family:var(--font-display);font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.subhead p{color:var(--text-dim)}
+.tool-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.tool-group{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.tool-group .small-label{color:var(--accent);margin:0 0 12px}
+.tool-group .tags{margin-top:0}
+
 /* ---------- skills ---------- */
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px}
 .skill-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
@@ -229,6 +244,27 @@ section{padding:96px 24px}
 .lightbox img{max-width:100%;max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.55);cursor:default}
 .lightbox-close{position:absolute;top:18px;right:22px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:background .2s}
 .lightbox-close:hover{background:rgba(255,255,255,.28)}
+
+/* "scroll down for more" nudge (certificates page) */
+.scroll-hint{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:120;
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  padding:10px 18px;border-radius:999px;font-size:.9rem;font-weight:600;
+  color:var(--text);background:color-mix(in srgb,var(--bg-alt) 90%,transparent);
+  border:1px solid var(--border);box-shadow:var(--shadow);backdrop-filter:blur(10px);
+  transition:opacity .4s var(--ease),transform .4s var(--ease);
+}
+.scroll-hint svg{animation:bob 1.4s ease-in-out infinite}
+.scroll-hint.hide{opacity:0;transform:translateX(-50%) translateY(12px);pointer-events:none}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* "Under Review" style badge next to a publication title */
+.pub-badge{
+  display:inline-block;vertical-align:middle;margin-left:8px;
+  padding:3px 10px;border-radius:999px;
+  font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+}
 /* the "+N" pill that collapses extra tags — click to expand */
 .tag-more{
   padding:5px 13px;border-radius:999px;font-size:.8rem;font-weight:700;

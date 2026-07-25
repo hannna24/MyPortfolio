@@ -1,0 +1,6 @@
+# Local archive of the template — not needed for the live site
+portfolio.zip
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

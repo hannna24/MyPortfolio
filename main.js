@@ -123,8 +123,25 @@ function renderHome() {
   $("#heroName").textContent = d.name;
   $("#heroRole").textContent = d.role;
   $("#heroBio").textContent  = d.bio;
-  $("#avatar").src = d.photo;
-  $("#avatar").alt = d.name;
+
+  // avatar: use the photo if it loads, otherwise fall back to initials
+  const avatar = $("#avatar");
+  const showInitials = () => {
+    const initials = (d.name || "").split(/\s+/).filter(Boolean)
+      .map(w => w[0]).slice(0, 2).join("").toUpperCase();
+    const fb = document.createElement("div");
+    fb.className = "avatar avatar-fallback";
+    fb.id = "avatar";
+    fb.textContent = initials || "•";
+    avatar.replaceWith(fb);
+  };
+  if (d.photo) {
+    avatar.src = d.photo;
+    avatar.alt = d.name;
+    avatar.onerror = showInitials;
+  } else {
+    showInitials();
+  }
 
   $("#heroMeta").innerHTML = [
     d.location && `<span>${I.pin}${esc(d.location)}</span>`,
@@ -228,6 +245,23 @@ function renderSkills() {
       <div class="bar"><i data-level="${Number(k.level) || 0}"></i></div>
       <p>${esc(k.note)}</p>
     </article>`).join("");
+
+  // categorized "toolbox" chips below the skill bars
+  const groupHost = $("#skillGroups");
+  if (groupHost && (d.skillGroups || []).length) {
+    groupHost.innerHTML = `
+      <div class="subhead reveal">
+        <h3>Full Toolbox</h3>
+        <p>The complete stack I work across</p>
+      </div>
+      <div class="tool-groups">
+        ${d.skillGroups.map(g => `
+          <div class="tool-group reveal">
+            <div class="small-label">${esc(g.name)}</div>
+            <div class="tags">${(g.items || []).map(i => `<span class="tag">${esc(i)}</span>`).join("")}</div>
+          </div>`).join("")}
+      </div>`;
+  }
 
   setupScrollHint("skills");
 }
