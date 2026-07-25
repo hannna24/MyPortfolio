@@ -30,27 +30,46 @@ const DATA = {
   // Newest job first. Copy a whole { ... } block to add another.
   experience: [
     {
-      role: "Software Engineer",
-      company: "Company Name",
-      logo: "assets/company1.png",       // or an image URL, or "" for none
-      date: "July 2024 - Present",
+      role: "AI/QA Engineer — Graduation Project (Sponsored)",
+      company: "Siemens EDA",
+      logo: "",                          // or an image URL, or "" for none
+      date: "October 2025 – July 2026",
       place: "Cairo, Egypt",
       points: [
-        "What you built and the impact it had. Lead with the result — numbers land harder than adjectives.",
-        "A second paragraph about another area of the role: the tools, the scale, who used it.",
+        "Built an automated GUI test-generation system for Electron apps using Playwright, MCP, and Generative AI, with multiphase agentic orchestration and skill-based knowledge injection for deterministic LLM behavior.",
+        "Built a self-healing Fixer Agent using closed-loop reasoning to diagnose and patch UI regressions via execution logs, accessibility snapshots, and Playwright traces.",
+        "Implemented agent evaluation frameworks for trajectory accuracy and tool-calling reliability, with cross-platform runtime branching across VS Code and Theia.",
+        "Leveraged Generative AI for autonomous UI exploration and Page Object Model generation, reducing manual scripting by 85%.",
       ],
-      tags: ["Python", "React", "PostgreSQL", "Docker"],
+      tags: ["Playwright", "MCP", "Generative AI", "LLM Agents", "Agent Evaluation", "Electron", "TypeScript"],
     },
     {
-      role: "Junior Developer",
-      company: "Another Company",
-      logo: "assets/company2.png",
-      date: "March 2023 - June 2024",
+      role: "Python Instructor",
+      company: "Mind Builder",
+      logo: "",
+      date: "July 2024 – September 2024",
       place: "Cairo, Egypt",
       points: [
-        "Describe what you owned here and what changed because of it.",
+        "Delivered structured programming instruction to ~20 students, mentoring them in problem-solving, OOP, and practical coding challenges.",
+        "Designed weekly exercises and hands-on assignments, reviewing student code and giving individual feedback to track progress across the program.",
       ],
-      tags: ["JavaScript", "Node.js", "REST APIs"],
+      tags: ["Python", "OOP", "Teaching", "Mentoring"],
+    },
+  ],
+
+
+  /* ---------- 2b. PUBLICATIONS & RESEARCH ---------- */
+  publications: [
+    {
+      title: "Agentic GUI Test Generation for Electron Applications",
+      venue: "IEEE NILES 2026 — Novel Intelligent and Leading Emerging Sciences Conference",
+      date: "2026",
+      status: "Under Review",
+      place: "Cairo, Egypt",
+      points: [
+        "Co-authored paper on agentic pipelines, self-healing agents, and LLM-based UI automation, submitted to IEEE NILES 2026.",
+      ],
+      link: "",                          // "" to hide the button
     },
   ],
 

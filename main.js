@@ -159,6 +159,36 @@ function renderExperience() {
     </div>`).join("");
 }
 
+function renderPublications() {
+  const host = $("#pubSection");
+  if (!host) return;
+  const pubs = DATA.publications || [];
+  if (!pubs.length) return;
+  host.innerHTML = `
+    <div class="head reveal" style="margin:80px 0 44px">
+      <h2>Publications &amp; Research</h2>
+    </div>
+    <div class="timeline">
+      ${pubs.map(p => `
+        <div class="tl-item reveal">
+          <article class="card">
+            <div class="card-top">
+              <div>
+                <h3>${esc(p.title)}${p.status ? ` <span class="pub-badge">${esc(p.status)}</span>` : ""}</h3>
+                <div class="org">${esc(p.venue)}</div>
+              </div>
+            </div>
+            <div class="sub">
+              ${p.date ? `<span>${I.cal}${esc(p.date)}</span>` : ""}
+              ${p.place ? `<span>${I.pin}${esc(p.place)}</span>` : ""}
+            </div>
+            ${(p.points || []).map(x => `<p>${esc(x)}</p>`).join("")}
+            ${p.link ? `<div class="proj-links"><a class="btn btn-ghost" href="${esc(p.link)}" target="_blank" rel="noopener">${I.ext} View paper</a></div>` : ""}
+          </article>
+        </div>`).join("")}
+    </div>`;
+}
+
 function renderEducation() {
   if (!$("#eduList")) return;
   const d = DATA, s = d.subtitles || {};
@@ -390,6 +420,7 @@ function init() {
 
   renderHome();
   renderExperience();
+  renderPublications();
   renderEducation();
   renderSkills();
   renderProjects();
